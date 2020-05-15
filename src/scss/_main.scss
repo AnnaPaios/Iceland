@@ -4,25 +4,53 @@ body {
   font-size: 14px;
 }
 
-.border_bottom {
-  border-bottom: 1px solid #e6dfdf;
+.container {
+  max-width: 960px;
+  margin: 0 auto;
 }
 
+//header
+
 header {
-  height: 130px;
+  padding: 20px 0;
   background: $main-bg;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  //box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
    .logo {
-     width: 200px;
-     height: 75px;
+     width: 180px;
+     height: 60px;
 
      img {
        width: 100%;
        height: 100%;
      }
    }
+   nav {
+     margin: 26px 0 0 0;
+      ul {
+        li {
+          float: left;
+          a {
+            text-decoration: none;
+            color: $text-color;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 20px;
+            font-size: 16px;
+            font-family: 'Montserrat-Bold';
+          }
+        }
+      }
+   }
 }
+
 
 .fa,
 .fas {
