@@ -14,13 +14,19 @@ body {
 header {
   padding: 20px 0;
   background: $main-bg;
-  //box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+  
   
 
-  .container {
+  .nav-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 20px;
+
+    @media screen and (min-width: $medium) {
+      padding: 0;
+    }
   }
 
    .logo {
@@ -33,20 +39,79 @@ header {
      }
    }
    nav {
-     margin: 26px 0 0 0;
+     margin: 15px 0 0 0;
       ul {
-        li {
-          float: left;
-          a {
-            text-decoration: none;
-            color: $text-color;
-            text-transform: uppercase;
-            font-weight: bold;
-            padding: 20px;
-            font-size: 16px;
-            font-family: 'Montserrat-Bold';
+        display: none;
+
+        @media screen and (min-width: $medium)  {
+          display: block;
+
+          li {
+            float: left;
+            a {
+              text-decoration: none;
+              color: $text-color;
+              text-transform: uppercase;
+              font-weight: bold;
+              padding: 20px;
+              font-size: 16px;
+              font-family: 'Montserrat-Bold';
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
           }
         }
+      }
+
+      .fa-align-justify,
+      .fa-times{
+        color: $text-color;
+        display: inline-block;
+        font-size: 30px;
+
+        @media screen and (min-width: $medium) {
+          display: none;
+        }
+      }
+
+      .fa-times {
+        display: none;
+      }
+
+
+      &.active {
+        ul  {
+          display: block;
+          width: 100%;
+          background: $main-bg;
+          position: absolute;
+          left: 0;
+          top: 100px;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+
+          li {
+            a {
+              text-decoration: none;
+              color: $text-color;
+              display: block;
+              box-shadow: 0 0px 2px rgba(0,0,0,0.5);
+              text-transform: uppercase;
+              font-weight: bold;
+              padding: 10px 20px;
+              font-size: 16px;
+              font-family: 'Montserrat-Bold';
+            }
+          }
+        }
+        .fa-times {
+          display: block;
+        }
+        .fa-align-justify {
+          display: none;
+        }
+
       }
    }
 }
