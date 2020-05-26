@@ -2,7 +2,7 @@
     background: $text-color;
     position: relative;
     z-index: 1;
-    max-height: 195px;
+    max-height: 190px;
 
     &:before{
         content: '';
@@ -23,11 +23,43 @@
         }
     }
 
-    @media screen and (min-width: $medium) {
-        max-height: 540px;
+    @media screen and (min-width: $extra-small) {
+        max-height: 280px;
+        
+        &:before {
+            max-height: 280px;
+        }
+    }
 
-        &:before{
-            height: 540px;
+    @media screen and (min-width: $small) {
+        max-height: 360px;
+
+        &:before {
+            max-height: 360px;
+        }
+    }
+
+    @media screen and (min-width: $extra-medium) {
+        max-height: 400px;
+
+        &:before {
+            max-height: 400px;
+        }
+    }
+
+    @media screen and (min-width: $medium) {
+        max-height: 440px;
+
+        &:before {
+            max-height: 440px;
+        }
+    }
+
+    @media screen and (min-width: $large) {
+        max-height: 520px;
+
+        &:before {
+            max-height: 520px;
         }
     }
 
@@ -55,6 +87,25 @@
                 @media screen and (min-width: $large) {
                     max-height: 520px;
                 }
+            }
+        }
+
+        .orderTime {
+            position: absolute;
+            left: 50%;
+            bottom: 70px;
+            background: $main-bg;
+            text-transform: uppercase;
+            color: $text-color;
+            padding: 10px 0;
+            letter-spacing: 2px;
+            font-weight: bold;
+            width: 200px;
+            margin-left: -100px;
+            z-index: 100;
+
+            &:hover {
+                background: $bg-hover;
             }
         }
     }

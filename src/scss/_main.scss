@@ -2,13 +2,27 @@ body {
   background: $main-bg-color;
   font-family: 'andrewandreasplain';
   font-size: 14px;
+  color: $text-color;
 }
 
 .container {
   max-width: 960px;
   margin: 0 auto;
-}
 
+    &.map {
+      .contact {
+        .far{
+          font-size: 15px;
+        
+          &.fa-var-phone {
+            &:before {
+              content: "\f095";
+            }
+          }
+      }
+    }
+  }
+}
 //header
 
 header {
@@ -68,6 +82,7 @@ header {
               padding: 20px;
               font-size: 16px;
               font-family: 'Montserrat-Bold';
+              letter-spacing: 1px;
 
               &:hover {
                 text-decoration: underline;
@@ -136,34 +151,6 @@ header {
   color: $bg-color;
 }
 
-.btnIcon {
-  display: inline-block;
-  width: 48px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  text-decoration: none;
-  color: $bg-color;
-
-  &:hover,
-  &:focus {
-    color: $purple-light;
-    outline: none;
-  }
-
-  &:hover,
-  &:focus {
-    span {
-      color: $purple-light;
-    }
-  }
-
-  &.filterName {
-    width: 52px;
-    font-size: 1.2em;
-  }
-}
-
 button {
   background: none;
   border: none;
@@ -174,43 +161,91 @@ button {
     }
 }
 
-.main_block {
-  display: flex;
-  max-width: 885px;
-  margin: -60px auto 0;
+p {
+  font-size: 18px;
+  line-height: 22px;
+  margin: 0 0 10px 0;
+}
 
-  @media screen and (max-width: $medium) {
-    margin: 0 auto;
+.main-content {
+  h1, h2 {
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin: 30px 0 40px;
+    font-size: 36px;
   }
 
-  @media screen and (min-width: $large) {
-    position: relative;
-    left: -30px;
-  }
+  .services {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 40px;
 
-  @media screen and (min-width: $extra-large) {
-    max-width: 1050px;
-  }
+      @media screen and (min-width: $medium) {
+        flex-direction: row;
+        justify-content: space-around;
+      }
 
-  @media screen and (min-width: $max-large) {
-    max-width: 1065px;
-  }
+    .item {
+      width: 250px;
+      height: auto;
+      text-align: center;
+      margin: 20px auto;
+       
+      span {
+        display: block;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 30px 0;
+        letter-spacing: 1px;
+      }
+    }
+    
+    .fas {
+      font-size: 90px;
+      color: $main-bg;
 
-  .side_bar {
-    width: 42%;
-
-    @media screen and (min-width: $extra-large) {
-      width: 40%;
+      @media screen and (min-width: $medium) {
+        font-size: 120px;
+      }
     }
   }
 
-  .user_info {
-    flex: 1;
-    box-shadow: 4px 4px 15px 4px rgba(0, 0, 0, 0.3);
-    height: 100%;
+  form {
+    padding: 0 20px;
+
+    input, select {
+      display: block;
+      max-width: 520px;
+      margin: 20px auto;
+      width: 100%;
+      padding: 15px 20px;
+      border: 3px solid $main-bg;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+    select {
+      height: 56px;
+    }
+
+    label {
+      max-width: 520px;
+      display: block;
+      margin: 20px auto 0;
+      font-size: 18px;
+    }
+
+    input[type=submit] {
+      background: $main-bg;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+
+      &:hover {
+        background: $bg-hover;
+        border: 3px solid $bg-hover;
+      }
+    }
   }
 }
-
-
-
 
