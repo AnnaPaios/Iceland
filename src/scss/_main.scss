@@ -1,5 +1,5 @@
 body {
-  background: $main-bg-color;
+  background: $bg-color;
   font-family: 'andrewandreasplain';
   font-size: 14px;
   color: $text-color;
@@ -23,6 +23,7 @@ body {
     }
   }
 }
+
 //header
 
 header {
@@ -179,7 +180,7 @@ p {
   .services {
     display: flex;
     flex-direction: column;
-    margin: 20px 0 40px;
+    margin: 20px 0;
 
       @media screen and (min-width: $medium) {
         flex-direction: row;
@@ -213,6 +214,7 @@ p {
 
   form {
     padding: 0 20px;
+    margin: 0 0 40px 0;
 
     input, select {
       display: block;
@@ -245,6 +247,78 @@ p {
         background: $bg-hover;
         border: 3px solid $bg-hover;
       }
+    }
+  }
+}
+
+footer {
+  padding: 20px;
+  background: $main-bg;
+  position: relative;
+  height: auto;
+ 
+  @media screen and (min-width: $medium) {
+    padding: 30px 50px;
+    height: 100px;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &:after{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(transparent 15%, black 105%);
+      z-index: 10;
+  }
+  .logo {
+    width: 120px;
+    height: 40px;
+    z-index: 100;
+    margin: 0 auto;
+
+    @media screen and (min-width: $medium) {
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  ul {
+    margin: 10px 0;
+    li {
+      @media screen and (min-width: $medium) {
+        float: left;
+      }
+        a {
+          text-decoration: none;
+          color: $text-color;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 14px;
+          font-family: 'Montserrat-Bold';
+          letter-spacing: 1px;
+          z-index: 100;
+          position: relative;
+          padding:  5px 20px;
+          display: block;
+
+          @media screen and (min-width: $medium) {
+            padding: 0 20px;
+          }
+
+            &:hover {
+              text-decoration: underline;
+              color: $text-color;
+            }
+        }
     }
   }
 }
